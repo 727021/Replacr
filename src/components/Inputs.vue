@@ -8,6 +8,7 @@
         <v-row justify="space-around">
             <v-col cols="5">
                 <v-text-field
+                    hint="Enter to submit"
                     clearable
                     @keypress.enter.prevent="doRegex"
                     outlined
@@ -31,6 +32,7 @@
             </v-tooltip>
             <v-col cols="5">
                 <v-text-field
+                    hint="Enter to submit"
                     clearable
                     @keypress.enter.prevent="doRegex"
                     outlined
@@ -41,7 +43,16 @@
         </v-row>
         <v-row>
             <v-col>
-                <v-textarea no-resize auto-grow clearable outlined label="Input" v-model="input" />
+                <v-textarea
+                    hint="Ctrl+Enter to submit"
+                    @keydown.ctrl.enter.prevent="doRegex"
+                    no-resize
+                    auto-grow
+                    clearable
+                    outlined
+                    label="Input"
+                    v-model="input"
+                />
             </v-col>
             <v-col>
                 <v-textarea
